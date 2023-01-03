@@ -1,5 +1,5 @@
 var chucVuType = {
-    sep: "Sếp",
+    sep: "Giám Đốc",
     truongPhong: "Trưởng phòng",
     nhanVien: "Nhân viên"
 }

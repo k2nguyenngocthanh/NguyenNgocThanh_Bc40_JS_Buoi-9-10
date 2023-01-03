@@ -13,7 +13,7 @@ function kiemTraDoDai(value,idErr,min,max){
 }
 
 function kiemHoTen(value){
-    const reg =/^[a-zA-Z]+$/;
+    const reg =/^[A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*(?:[ ][A-ZÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴÈÉẸẺẼÊỀẾỆỂỄÌÍỊỈĨÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠÙÚỤỦŨƯỪỨỰỬỮỲÝỴỶỸĐ][a-zàáạảãâầấậẩẫăằắặẳẵèéẹẻẽêềếệểễìíịỉĩòóọỏõôồốộổỗơờớợởỡùúụủũưừứựửữỳýỵỷỹđ]*)*$/gm;
   var ktHoTen =reg.test(value);
   if(ktHoTen){
     document.getElementById("tbTen").innerText="";
@@ -54,4 +54,52 @@ else{
     return false;
 } 
 }
+
+
+
+
+
+const min_SALARY= 1000000;
+const max_SALARY= 20000000;
+const isValidSaLaRy =(luongCB) =>{
+    if(!luongCB){
+        document.getElementById("tbLuongCB").innerText="Lương cơ bản 1 000 000 - 20 000 000, không để trống";
+        return false;
+    }
+    if(luongCB<min_SALARY || luongCB>max_SALARY){
+        document.getElementById("tbLuongCB").innerText="Lương cơ bản 1 000 000 - 20 000 000, không để trống";
+        return false;
+    }
+    document.getElementById("tbLuongCB").innerText="";
+    return true;
+
+}
+
+function kiemTraChucVu(chucVu){
+    if(chucVu){
+        document.getElementById("tbChucVu").innerText="";
+        return true;
+    }
+    document.getElementById("tbChucVu").innerText="Chức vụ phải chọn chức vụ hợp lệ (Giám đốc, Trưởng Phòng, Nhân Viên)";
+    return false;
+
+}
+
+
+const min_GioLam= 80;
+const max_GioLam= 200;
+const kiemTraGioLam =(gioLam) =>{
+    if(!gioLam){
+        document.getElementById("tbGiolam").innerText=" Số giờ làm trong tháng 80 - 200 giờ, không để trống";
+        return false;
+    }
+    if(gioLam<min_GioLam || gioLam>max_GioLam){
+        document.getElementById("tbGiolam").innerText=" Số giờ làm trong tháng 80 - 200 giờ, không để trống";
+        return false;
+    }
+    document.getElementById("tbGiolam").innerText="";
+    return true;
+
+}
+
 
